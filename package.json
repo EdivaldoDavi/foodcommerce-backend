@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "dev": "nodemon",
+    "dev": "nodemon index.ts",
     "start": "node build/index.js",
     "db:format": "prisma format",
     "db:migrate": "prisma migrate dev",
