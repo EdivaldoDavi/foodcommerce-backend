@@ -19,7 +19,7 @@ const prisma = new PrismaClient()
 app.use(express.json())
 
 app.use((req: Request, res: Response, next ) => {
-  res.header("Access-Control-Allow-Origin", "https://foodcommerce-finalizado.vercel.app")
+  res.header("Access-Control-Allow-Origin", "https://efood-swart.vercel.app")
   app.use(cors());
   next();
 })
