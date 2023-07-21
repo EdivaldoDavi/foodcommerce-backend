@@ -12,7 +12,7 @@ import cors from 'cors'
 
 dotenv.config()
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://foodcommerce-backend.vercel.app',
   optionsSuccessStatus: 200
 }
 const app: Express = express()
