@@ -11,10 +11,7 @@ import CheckoutService from "./services/CheckoutService"
 import cors from 'cors'
 
 dotenv.config()
-const corsOptions = {
-  origin: 'https://foodcommerce-backend.vercel.app',
-  optionsSuccessStatus: 200
-}
+
 const app: Express = express()
 const port = process.env.PORT || 5000
 const prisma = new PrismaClient()
@@ -34,7 +31,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send({ message })
 })
 
-app.get("/snacks", cors(corsOptions), async (req: Request, res: Response) => {
+app.get("/snacks", async (req: Request, res: Response) => {
   const { snack } = req.query
 
   if (!snack) return res.status(400).send({ error: "Snack is required" })
@@ -51,7 +48,7 @@ app.get("/snacks", cors(corsOptions), async (req: Request, res: Response) => {
   res.send(snacks)
 })
 
-app.get("/orders/:id", cors(corsOptions), async (req: Request, res: Response) => {
+app.get("/orders/:id", async (req: Request, res: Response) => {
   const { id } = req.params
 
   const order = await prisma.order.findUnique({
@@ -74,7 +71,7 @@ interface CheckoutRequest extends Request {
   }
 }
 
-app.post("/checkout", cors(corsOptions), async (req: CheckoutRequest, res: Response) => {
+app.post("/checkout",  async (req: CheckoutRequest, res: Response) => {
   const { cart, customer, payment } = req.body
 
   const orderCreated = await new CheckoutService().process(
