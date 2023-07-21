@@ -20,7 +20,12 @@ const port = process.env.PORT || 5000
 const prisma = new PrismaClient()
 
 app.use(express.json())
-app.use(cors())
+
+app.use((req: Request, res: Response, next ) => {
+  app.use(cors());
+  next();
+})
+
 app.get("/", (req: Request, res: Response) => {
   const { message } = req.body
 
