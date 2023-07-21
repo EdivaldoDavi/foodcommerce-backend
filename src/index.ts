@@ -19,6 +19,7 @@ const prisma = new PrismaClient()
 app.use(express.json())
 
 app.use((req: Request, res: Response, next ) => {
+  res.header("Access-Control-Allow-Origin", "*")
   app.use(cors());
   next();
 })
