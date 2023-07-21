@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines":{
-   "node": "14.x"
+  "engines": {
+    "node": "14.x"
   },
   "scripts": {
     "build": "rimraf ./build && tsc",
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@prisma/client": "^4.15.0",
+    "@vercel/postgres": "^0.4.0",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
