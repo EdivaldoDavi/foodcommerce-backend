@@ -84,7 +84,7 @@ export default class PaymentService {
         ccv: payment.creditCardSecurityCode,
       },
       creditCardHolderInfo: {
-        name: customer.fullName,
+        name: customer.name,
         email: customer.email,
         cpfCnpj: customer.document,
         postalCode: customer.zipCode,
