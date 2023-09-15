@@ -4,7 +4,7 @@ CREATE TYPE "OrderStatus" AS ENUM ('PENDING', 'PAID', 'CANCELED');
 -- CreateTable
 CREATE TABLE "Customer" (
     "id" SERIAL NOT NULL,
-    "name" VARCHAR(255) NOT NULL,
+    "fullName" VARCHAR(255) NOT NULL,
     "email" VARCHAR(255) NOT NULL,
     "mobile" VARCHAR(255) NOT NULL,
     "document" VARCHAR(255) NOT NULL,

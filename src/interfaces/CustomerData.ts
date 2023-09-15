@@ -1,5 +1,5 @@
 export interface CustomerData {
-  name: string
+  fullName: string
   email: string
   mobile: string
   document: string
